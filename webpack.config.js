@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     clean: true,
     publicPath: '/',
   },
@@ -43,11 +43,12 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
-    static: './dist',
+    static: './docs',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Ensure this is correct
+      template: './src/index.html',
+      filename: 'index.html',
       title: 'Development',
     }),
   ],
